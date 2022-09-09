@@ -1,3 +1,4 @@
+/* setting username to save to localstorage, of the desired username input  */
 window.addEventListener('load', () => {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const nameInput = document.querySelector('#name');
@@ -18,13 +19,16 @@ window.addEventListener('load', () => {
 			content: e.target.elements.content.value,
 			category: e.target.elements.category.value,
 			done: false,
-			createdAt: new Date().getTime()
+			/*createdAt: new Date().getTime()*/
 		}
-
+       
+        /*add new todo to our array*/
 		todos.push(todo);
-
+                
+        /* turns array into json string to store string into local storage  */
 		localStorage.setItem('todos', JSON.stringify(todos));
 
+        /** resets page */
 		e.target.reset();
 
 		DisplayTodos()
@@ -33,16 +37,18 @@ window.addEventListener('load', () => {
 	DisplayTodos()
 })
 
+/** function of the todo element, in which we push our new tasks to list */
 function DisplayTodos () {
 	const todoList = document.querySelector('#todo-list');
 	todoList.innerHTML = "";
 
-	todos.sort((a, b) => {
+	todos/*.sort((a, b) => {
         if (a.value > b.value) { return 1; }
         if (a.value < b.value) { return -1; }
         return 0;
-    }).forEach(todo => 
+    })*/.forEach(todo => 
     {
+        /* creating all elements / variables */
 		const todoItem = document.createElement('div');
 		todoItem.classList.add('todo-item');
 
@@ -56,7 +62,9 @@ function DisplayTodos () {
 
 		input.type = 'checkbox';
 		input.checked = todo.done;
-		span.classList.add('bubble');
+		span.classList.add('circle');
+
+        /** decides the chosen importancy of task by the two colours */
 		if (todo.category == 'Casual') {
 			span.classList.add('Casual');
 		} else {
@@ -79,8 +87,11 @@ function DisplayTodos () {
 		todoItem.appendChild(content);
 		todoItem.appendChild(actions);
 
+        /** appends the new task */
 		todoList.appendChild(todoItem);
 
+        /** adding the functionality to the list made by the user, the edit button, delete, the radio button 
+          *  that strikes through the task when clicked on */
 		if (todo.done) {
 			todoItem.classList.add('done');
 		}

@@ -88,7 +88,7 @@ input[type="checkbox"] {
 }
 
 /* circle */
-.bubble {
+.circle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,11 +98,11 @@ input[type="checkbox"] {
     border: 2px solid rgb(255, 0, 0);
     box-shadow: 0px 0px 4px rgb(238, 58, 58);
 }
-.bubble.Casual {
+.circle.Casual {
     border-color: #2137d7;
     box-shadow: 0px 0px 4px #2137d7;
 }
-.bubble::after {
+.circle::after {
 	content: '';
 	display: block;
 	opacity: 0;
@@ -113,11 +113,11 @@ input[type="checkbox"] {
 	border-radius: 999px;
 	transition: 0.2s ease-in-out;
 }
-.bubble.Casual::after {
+.circle.Casual::after {
 	background-color: #2137d7;
     box-shadow: 0px 0px 4px #2137d7;
 }
-input:checked ~ .bubble::after {
+input:checked ~ .circle::after {
 	width: 10px;
 	height: 10px;
 	opacity: 1;
