@@ -16,4 +16,6 @@ Using  HTML, CSS and JavaScript you are going to create a Single Page Applicatio
 
 • Save tasks in their expected states and order even after the browser has been closed
 
- 
+ /*
+ Think about what would make an app such as this useful for yourself and what will take your project above and beyond the brief within a realistic timeframe. If you don't find your own app particularly useful, chances are nor will it's users!
+ */
