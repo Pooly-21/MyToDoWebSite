@@ -2,7 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Combo', cursive;
+    font-weight: bold;
 }
+
+body{
+    background-color: #232323;
+}
+
 section {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
@@ -10,33 +17,49 @@ section {
 	padding-right: 1.5rem;
 }
 
+/* greeting and input of the user name */
 .greeting .title{
     display: flex;
+   
 }
 .greeting .title input{
     margin-left: 0.5rem;
     flex: 1 1 0%;
     min-width: 0;
+    background-color: transparent;
+    border-color: transparent;
 }
 .greeting .title,
 .greeting .title input{
-    color: black;
+    color: #c94600;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
+/* user input of what to do*/
+.create-todo h3 {
+    color: #fd742a;
+    font-style: oblique;
+}
+.create-todo h4 {
+    color: black;
+}
 .create-todo input[type="text"] {
     display: block;
     width: 100%;
     font-size: 1rem;
     padding: 1rem 1.5rem;
-    color: black;
-    background-color: whitesmoke;
-    border-radius: 0.5rem;
-    box-shadow: grey;
+    color: #fd8748;
+    background-color: transparent;
+    border-radius: 1rem;
+    border-color: transparent;
+    box-shadow: 0px 0px 3px rgba(255, 111, 0, 0.75);
     margin-bottom: 1.5rem;
+    position: relative;
+    top: 0.5rem;
 }
 
+/* users choice of how important to colour code the task */
 .create-todo .options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -50,17 +73,21 @@ section {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: whitesmoke;
-    border-radius: 0.9rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 3px rgba(255, 111, 0, 0.75);
     cursor: pointer;
+    position: relative;
+    top: 0.5rem;
 }
 
+/* puts the circle checkbox in place */
 input[type="radio"],
 input[type="checkbox"] {
     display: none;
 }
 
+/* circle */
 .bubble {
     display: flex;
     align-items: center;
@@ -68,32 +95,28 @@ input[type="checkbox"] {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid cyan;
-    box-shadow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+    border: 2px solid rgb(255, 0, 0);
+    box-shadow: 0px 0px 4px rgb(238, 58, 58);
 }
-
 .bubble.Casual {
-    border-color: #EA40A4;
-    box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+    border-color: #2137d7;
+    box-shadow: 0px 0px 4px #2137d7;
 }
-
 .bubble::after {
 	content: '';
 	display: block;
 	opacity: 0;
 	width: 0px;
 	height: 0px;
-	background-color: cyan;
-	box-shadow: 0px 0px 4px rgba(58, 130, 238, 0.75);;
+	background-color: rgb(255, 0, 0);
+	box-shadow: 0px 0px 4px rgba(238, 58, 58, 0.75);;
 	border-radius: 999px;
 	transition: 0.2s ease-in-out;
 }
-
 .bubble.Casual::after {
-	background-color:  #EA40A4;
-    box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+	background-color: #2137d7;
+    box-shadow: 0px 0px 4px #2137d7;
 }
-
 input:checked ~ .bubble::after {
 	width: 10px;
 	height: 10px;
@@ -105,15 +128,17 @@ input:checked ~ .bubble::after {
     margin-top: 1rem;
 }
 
+/* submitting the task button */
 .create-todo input[type="submit"] {
     display: block;
     width: 100%;
     font-size: 1rem;
     padding: 1rem 1rem;
-    color: white;
-    background-color: #EA40A4;
+    color: #232323;
+    background-color: #fd742a;
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+    border-color: transparent;
+    box-shadow: 0px 0px 6px #c94600;
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -121,16 +146,19 @@ input:checked ~ .bubble::after {
     opacity: 0.75;
 }
 
+/* users tasks input list */
+
 .todo-list .list {
     margin: 1rem 0;
+    background-color: transparent;
 }
 .todo-list .todo-item {
     display: flex;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: transparent;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 4px #c94600;
     margin-bottom: 1rem;
 }
 .todo-item label {
@@ -140,13 +168,18 @@ input:checked ~ .bubble::after {
 }
 .todo-item .todo-content {
     flex: 1 1 0%;
+    background-color: transparent;
 }
 
 .todo-item .todo-content input {
-	color: var(--dark);
-	font-size: 1.125rem;
+	color: rgb(255, 255, 255);
+	font-size: 1.5rem;
+    background-color: transparent;
+    border-color: transparent;
+    font-variant: small-caps;
 }
 
+/* the edit and delete button */
 .todo-item .actions {
 	display: flex;
 	align-items: center;
@@ -156,7 +189,7 @@ input:checked ~ .bubble::after {
 	display: block;
 	padding: 0.5rem;
 	border-radius: 0.25rem;
-	color: #FFF;
+	color: rgb(6, 6, 6);
 	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
@@ -166,13 +199,16 @@ input:checked ~ .bubble::after {
 }
 .todo-item .actions .edit {
     margin-right: 0.5rem;
-    background-color: #EA40A4;
+    background-color: transparent;
+    border-color: #aa00aa;
 }
 .todo-item .actions .delete {
-    background-color: red;
+    background-color: maroon;
+    border-color: transparent;
 }
 
+/* the crossing out of tasks*/
 .todo-item.done .todo-content input {
     text-decoration: line-through;
-    color: grey;
+    color: maroon;
 }

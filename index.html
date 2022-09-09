@@ -5,64 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/stylesheet.css"/>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Combo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Combo&display=swap" rel="stylesheet">
+   
     <title>TODO`WEBSITE</title>
 </head>
 <body>
 	<main class="app">
 		<section class="greeting">
 			<h2 class="title">
-				YOSH, <input type="text" id="name" placeholder="input your name here please" />
-			</h2>
+				YOSH, <input type="text" id="name" placeholder="input your name here please, ENTER TO SAVE" />
+          </h2>
 		</section>
 
-    <main class="app">
         <section class="create-todo">
-			<h3>Creat your own List of things you need to do</h3>
+			<h3>Here, you can create your own List of tasks</h3>
 			<form id="new-todo-form">
-				<h4>What needs to be done?, <em> click enter to save </em> </h4>
-				<input 
-					type="text" 
-					placeholder="e.g. Get some milk"
-					name="content"
-					id="content"/>
-                    <h4>Pick a category</h4>
-				
+				<h4>So... what needs to be done?</h4>
+				<input type="text" placeholder="e.g. Buy Groceries / walk the dog etc..." name="content" id="content"/>   
+                <!--
+                <h4>date</h4>
+                <input type="text" placeholder="e.g. 12 january 2017 / 12/01/2017" name="date" id="date"/>                
+                   -->
+                <h4>Of what importance is this task?</h4>			
                 <div class="options">
 					<label>
 						<input type="radio" name="category" id="category1" value="Urgent" /> 
 						<span class="bubble Urgent"></span>
-						<div>URGENT</div>
+						<div>_URGENT_</div>
 					</label>
 					<label>
 						<input type="radio" name="category" id="category2" value="Casual" />
 						<span class="bubble Casual"></span>
-						<div>CASUAL</div>
+						<div>_CASUAL_</div>
 					</label>
 				</div>
 
-				<input type="submit" value="Add todo" />
+				<input type="submit" value="Click here to add Task" />
 			</form>
         </section>
 
 
         <section class="todo-list">
             <h3>My List of things to do</h3>
-            <div class="list" id="todo-list">
-            <div class="todo-item done">
-                    <label>
-                        <input type="checkbox" />
-                        <span class="bubble Urgent"></span>
-                    </label>
-                    <div class="todo-content">
-                        <input type="text" value="take cat to vet" readonly/>
-                    </div>
-                    <div class="actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div>
-            </div>  
+            <div class="list" id="todo-list"></div>  
         </section>
     </main>
     <script src="/main.js"></script>
