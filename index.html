@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/stylesheet.css"/>
+
+    <title>TODO`WEBSITE</title>
+</head>
+<body>
+	<main class="app">
+		<section class="greeting">
+			<h2 class="title">
+				YOSH, <input type="text" id="name" placeholder="input your name here please" />
+			</h2>
+		</section>
+
+    <main class="app">
+        <section class="create-todo">
+			<h3>Creat your own List of things you need to do</h3>
+			<form id="new-todo-form">
+				<h4>What needs to be done?, <em> click enter to save </em> </h4>
+				<input 
+					type="text" 
+					placeholder="e.g. Get some milk"
+					name="content"
+					id="content"/>
+                    <h4>Pick a category</h4>
+				
+                <div class="options">
+					<label>
+						<input type="radio" name="category" id="category1" value="Urgent" /> 
+						<span class="bubble Urgent"></span>
+						<div>URGENT</div>
+					</label>
+					<label>
+						<input type="radio" name="category" id="category2" value="Casual" />
+						<span class="bubble Casual"></span>
+						<div>CASUAL</div>
+					</label>
+				</div>
+
+				<input type="submit" value="Add todo" />
+			</form>
+        </section>
+
+
+        <section class="todo-list">
+            <h3>List</h3>
+            <div class="list" id="todo-list">
+                <div class="todo-item">
+                    <label>
+                        <input type="checkbox" />
+                        <span class="bubble Urgent"></span>
+                    </label>
+                    <div class="todo-content">
+                        <input type="text" value="take cat to vet" readonly/>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/main.js"></script>
+</body>
+</html>
