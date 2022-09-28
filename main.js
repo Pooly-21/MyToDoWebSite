@@ -42,11 +42,7 @@ function DisplayTodos () {
 	const todoList = document.querySelector('#todo-list');
 	todoList.innerHTML = "";
 
-	todos/*.sort((a, b) => {
-        if (a.value > b.value) { return 1; }
-        if (a.value < b.value) { return -1; }
-        return 0;
-    })*/.forEach(todo => 
+	todos.forEach(todo => 
     {
         /* creating all elements / variables */
 		const todoItem = document.createElement('div');
